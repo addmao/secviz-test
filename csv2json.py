@@ -7,11 +7,7 @@ with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
 
 	for line in domesticExchange:
 		regex_pattern = re.match(r'(.*),(.*),(.*),(.*),(.*),(.*),(.*)', line)
-	# print "{"
 
-	# for line in data :
-	# 	pattern = re.match(r'Plug#(\d+)\s\w+=(\d+\.\d+)\s\w+=(\d+\.\d+)\s\w+=(\d+\.\d+)\s\w+=(\d+\.\d+)\s\w+=(\d+\.\d+)\s\w+=(\d+\.\d+)', line)
-	# 	#print line
 		if regex_pattern:
 			print " {"
 			print "   " + " \"ASN-source\":\"" + regex_pattern.group(1) + "\","
@@ -22,10 +18,7 @@ with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
 			print "   " + " \"Gb/s\":\"" + regex_pattern.group(6) + "\" ,"
 			print "   " + " \"Connectivity Type\":\"" + regex_pattern.group(7) + "\""  #+ "\""
 			print " }"
-	# 		if(line[5] == '1' and line[6] == '2'):
-	# 			print "  " + "}"
-	# 		else :
-	# 			print "  " + "},"
+
 		else:
 			print "No match!!"
 
