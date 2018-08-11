@@ -44,7 +44,7 @@ with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
 			print "    " + " \"sourceID\": \"" + regex_pattern.group(1) + "\","
 			print "    " + " \"attributes\": {"
 			print "      },"
-			print "    " + " \"targetID\": " + regex_pattern.group(2) + ","
+			print "    " + " \"targetID\": \"" + regex_pattern.group(2) + "\","
 			print "    " + " \"size\": " + str(1) + ","
 			print "  },"
 		# else:
