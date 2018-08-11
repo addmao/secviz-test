@@ -6,7 +6,7 @@ with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
 	print "{"
 
 	for line in domesticExchange:
-		regex_pattern = re.match(r'(.*),(.*),(.*),(.*),(.*),(.*),(.*)', line)
+		regex_pattern = re.match(r'(.*),(.*),(.*),(.*),(.*),(.*),(.*)(\r+\s)', line)
 
 		if regex_pattern:
 			print " {"
@@ -19,7 +19,7 @@ with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
 			print "   " + " \"Connectivity Type\":\"" + regex_pattern.group(7) + "\""  #+ "\""
 			print " }"
 
-		else:
-			print "No match!!"
+		# else:
+		# 	print "No match!!"
 
 	print "}"
