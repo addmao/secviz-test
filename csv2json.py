@@ -28,4 +28,26 @@ with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
 		# else:
 		#  	print "No match!!"
 	print " ],"
+
+with open('2018-07-Domestic Exchange - Index.csv') as domesticExchange:
+
+	print " \"edges\": ["
+
+	for line1 in domesticExchange:
+		regex_pattern = re.match(r'(.*),(.*),(.*),(.*),(.*),(.*),(.*)(\r+\s)', line1)
+		# x = randint(0, 16777215)
+
+		if regex_pattern:
+			# print " {"
+			#Edge
+			print "  {"
+			print "    " + " \"sourceID\": \"" + regex_pattern.group(1) + "\","
+			print "    " + " \"attributes\": {"
+			print "      },"
+			print "    " + " \"targetID\": " + regex_pattern.group(2) + ","
+			print "    " + " \"size\": " + str(1) + ","
+			print "  },"
+		# else:
+		#  	print "No match!!"
+	print " ],"
 	print "}"
